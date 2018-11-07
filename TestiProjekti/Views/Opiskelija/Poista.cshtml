@@ -1,0 +1,22 @@
+﻿@model TestiProjekti.Models.OpiskelijaMalli
+@{
+    ViewBag.Title = "Poista";
+}
+
+<h2>Poista</h2>
+
+<fieldset>
+    <legend>Poista oppilas</legend>
+    @using (Html.BeginForm("Poista", "Opiskelija", FormMethod.Post))
+    {
+        @Html.HiddenFor(m => m.OpiskelijaID)
+        <b>Haluatko varmasti poistaa opiskelijan?</b>
+        <input type="submit" value="Kyllä" />
+    }
+
+
+</fieldset>
+
+<br />
+@Html.ActionLink("Takaisin opiskelijalistaukseen", "Index", "Opiskelija")
+

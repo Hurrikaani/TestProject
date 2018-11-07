@@ -1,0 +1,65 @@
+﻿@model TestiProjekti.Models.LoginModel
+@{
+    ViewBag.Title = "Login";
+}
+
+<fieldset>
+    <legend>
+        Kirjaudu
+    </legend>
+    @using (Html.BeginForm("Login", "käyttäjä", FormMethod.Post))
+    {
+    <table>
+        <tr>
+            <td>
+                @Html.LabelFor(model => model.Email)
+            </td>
+            <td>
+                @Html.TextBoxFor(model => model.Email)
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                @Html.ValidationMessageFor(model => model.Email, null, new { @class = "text text-danger" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(model => model.Salasana)
+            </td>
+            <td>
+                @Html.TextBoxFor(model => model.Salasana)
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                @Html.ValidationMessageFor(model => model.Salasana, null, new { @class = "text text-danger" })
+            </td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td>
+                <table>
+                    <tr>
+                        <td>
+                            <input type="submit" value="Kirjaudu" />
+                        </td>
+                        <td>
+                            <input type="reset" value="Reset" />
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.ValidationMessage("Error", null,new{@class = "text text-danger"})
+            </td>
+        </tr>
+    </table>
+    }
+    </fieldset>
+

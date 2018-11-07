@@ -1,0 +1,46 @@
+﻿@model IEnumerable<TestiProjekti.Models.OpiskelijaMalli>
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<h2>Opiskelijat</h2>
+
+@Html.ActionLink("Lisää opiskelija", "Create", "Opiskelija")
+
+<fieldset>
+    <legend>Opiskelijat</legend>
+    <table style="width:100%; color:white" class="table-bordered">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Koodi</th>
+                <th>Nimi</th>
+                <th>Ikä</th>
+                <th>Osoite</th>
+                <th>Maa</th>
+                <th>Email</th>
+                <th>Postinumero</th>
+                <th>Muokkaa</th>
+                <th>Poista</th>
+            </tr>
+        </thead>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>@item.OpiskelijaID</td>
+            <td>@item.Koodi</td>
+            <td>@item.Nimi</td>
+            <td>@item.Ikä</td>
+            <td>@item.Osoite</td>
+            <td>@item.Maa</td>
+            <td>@item.Email</td>
+            <td>@item.Postinumero</td>
+            <td>@Html.ActionLink("Muokkaa","Muokkaa","Opiskelija", new { OpiskelijaID = @item.OpiskelijaID },null)</td>
+            <td>@Html.ActionLink("Poista", "Poista", "Opiskelija", new { OpiskelijaID = @item.OpiskelijaID }, null)</td>
+        </tr>
+        }
+    </table>
+</fieldset>
+<br />
+<p>Opiskelijoita yhteensä:@Model.Count()</p>

@@ -1,0 +1,59 @@
+﻿@model TestiProjekti.Models.OpiskelijaMalli
+@{
+    ViewBag.Title = "Muokkaa";
+}
+
+@using (Html.BeginForm("Muokkaa", "Opiskelija", FormMethod.Post))
+{
+    <fieldset>
+        <legend>Muokkaa tietoja</legend>
+        <table>
+            <tr>
+                <td>@Html.HiddenFor(m => m.OpiskelijaID)</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(model => model.Koodi)</td>
+                <td>@Html.TextBoxFor(model => model.Koodi)</td>
+                <td>@Html.ValidationMessageFor(model => model.Koodi)</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(model => model.Nimi)</td>
+                <td>@Html.TextBoxFor(model => model.Nimi)</td>
+                <td>@Html.ValidationMessageFor(model => model.Nimi)</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(model => model.Ikä)</td>
+                <td>@Html.TextBoxFor(model => model.Ikä)</td>
+                <td>@Html.ValidationMessageFor(model => model.Ikä)</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(model => model.Osoite)</td>
+                <td>@Html.TextBoxFor(model => model.Osoite)</td>
+                <td>@Html.ValidationMessageFor(model => model.Osoite)</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(model => model.Maa)</td>
+                <td>@Html.TextBoxFor(model => model.Maa)</td>
+                <td>@Html.ValidationMessageFor(model => model.Maa)</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(model => model.Email)</td>
+                <td>@Html.TextBoxFor(model => model.Email)</td>
+                <td>@Html.ValidationMessageFor(model => model.Email)</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(model => model.Postinumero)</td>
+                <td>@Html.TextBoxFor(model => model.Postinumero)</td>
+                <td>@Html.ValidationMessageFor(model => model.Postinumero)</td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Päivitä"</td>
+            </tr>
+        </table>
+    </fieldset>
+    <br />
+    @Html.ActionLink("Takaisin opiskelijalistaukseen", "Index", "Opiskelija")
+}
+
+
+

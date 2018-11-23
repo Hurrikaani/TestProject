@@ -26,5 +26,9 @@ namespace TestiProjekti.Controllers
 
             return View();
         }
+        public ActionResult Youtube()
+        {
+            return View();
+        }
     }
 }

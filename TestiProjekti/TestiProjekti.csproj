@@ -239,6 +239,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Youtubetyyli.css" />
     <EntityDeploy Include="Models\OpiskelijaModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>OpiskelijaModel.Designer.cs</LastGenOutput>
@@ -285,6 +286,7 @@
     <Content Include="Views\Shared\_loginPartial.cshtml" />
     <Content Include="Views\Käyttäjä\Register.cshtml" />
     <Content Include="Views\Käyttäjä\Login.cshtml" />
+    <Content Include="Views\Home\Youtube.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
